@@ -1,23 +1,20 @@
+var valorConvertido;
 
-var moeda;
-var valor;
-var valorConv;
-
-while (moeda == null) {
-    moeda = prompt("Qual moeda você deseja converter em real?")
+function cotacao() {
+    var valor = parseInt(document.querySelector('input').value);
+    var moeda = document.querySelector('select').value;
     switch (moeda) {
-        case "Dólar":
-            valor = parseInt(prompt("Insira o valor a ser convertido: "));
-            valorConv = valor * 4.856;
-            alert("US$ " + valor.toFixed(2) + " = R$ " + valorConv.toFixed(2));
+        case 'dolar':
+            valorConvertido = valor * 4.862;
+            alert('US$ ' + valor.toFixed(2) + ' = R$ ' + valorConvertido.toFixed(2));
+            break;
+        case 'euro':
+            valorConvertido = valor * 5.291;
+            alert('EUR ' + valor.toFixed(2) + ' = R$ ' + valorConvertido.toFixed(2));
+            break;
+        case 'bitcoin':
+            valorConvertido = valor * 174635.98;
+            alert('BTC ' + valor.toFixed(2) + ' = R$ ' + valorConvertido.toFixed(2));
             break
-        case "Euro":
-            valor = parseInt(prompt("Insira o valor a ser convertido: "));
-            valorConv = valor * 5.242;
-            alert("EUR " + valor.toFixed(2) + " = R$ " + valorConv.toFixed(2));
-            break
-        default:
-            moeda = null
-            alert("Selecione entre Dólar ou Euro para ser convertido")
     }
 }
