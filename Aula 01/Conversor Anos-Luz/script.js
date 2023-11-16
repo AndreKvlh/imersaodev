@@ -1,6 +1,8 @@
 
-var km = parseFloat(prompt("Insira a distância da estrela em Km: "));
-var ly = km * 0.00000000000010570;
+var km, ly;
 
-alert("Distância em anos-luz: " + ly.toFixed(0) + " Ly");
-
+function calcularDist() {
+    km = parseFloat(document.querySelector("input").value);
+    ly = km * 0.0000000000005078;
+    alert(km.toFixed(2) + "Km = " + ly.toFixed(2) + "Ly")
+}
